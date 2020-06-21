@@ -4,9 +4,6 @@ import com.maroti.model.Owner;
 
 import java.util.Set;
 
-public interface OwnerServices {
+public interface OwnerServices extends CrudService<Owner, Integer>{
 
-    Owner findById(Integer id);
-    Owner saveOwner(Owner o);
-    Set<Owner> findAll();
 }

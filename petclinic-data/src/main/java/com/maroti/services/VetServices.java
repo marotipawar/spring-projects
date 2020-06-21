@@ -4,9 +4,6 @@ import com.maroti.model.Vet;
 
 import java.util.Set;
 
-public interface VetServices {
+public interface VetServices extends CrudService<Vet, Integer> {
 
-    Vet findById(Integer id);
-    Set<Vet> findAll();
-    Vet saveVet(Vet v);
 }
