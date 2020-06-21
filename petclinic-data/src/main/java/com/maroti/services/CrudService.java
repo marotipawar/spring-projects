@@ -9,7 +9,7 @@ public interface CrudService<T, ID> {
     Set<T> findAll();
     void deleteById(ID id);
     void delete(T t);
-    void deleteAll();
+
 
 
 }
