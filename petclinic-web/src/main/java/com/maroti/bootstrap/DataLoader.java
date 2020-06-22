@@ -34,7 +34,6 @@ public class DataLoader implements CommandLineRunner {
 
 
         Owner o1 = new Owner();
-        o1.setId(1);
         o1.setFirstName("Maroti");
         o1.setLastName("Pawar");
         o1.setAddress("Nanded");
@@ -43,15 +42,10 @@ public class DataLoader implements CommandLineRunner {
         os.save(o1);
 
         Vet v1 = new Vet();
-        v1.setId(1);
         v1.setFirstName("Arnav");
         v1.setLastName("Pawar");
         vs.save(v1);
-        Pet p1 = new Pet();
-        LocalDate d = LocalDate.now();
-        p1.setBirthDate(d);
-        p1.setOwner(o1);
-        ps.save(p1);
+
         System.out.println("Loaded Owner ...........");
         System.out.println("Loaded Pet............");
     }

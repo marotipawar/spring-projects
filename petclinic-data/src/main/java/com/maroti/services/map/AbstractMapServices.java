@@ -1,13 +1,12 @@
 package com.maroti.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import com.maroti.model.BaseEntity;
 
-public abstract class AbstractMapServices<T, ID> {
+import java.util.*;
 
-    protected Map<ID,T> map = new HashMap<>();
+public abstract class AbstractMapServices<T extends BaseEntity, ID extends Integer> {
+
+    protected Map<Integer,T> map = new HashMap<>();
 
     T findById(ID id)
     {
@@ -19,9 +18,19 @@ public abstract class AbstractMapServices<T, ID> {
         return new HashSet<>(map.values());
     }
 
-    T save(ID id,T t)
+    T save(T t)
     {
-        map.put(id, t);
+        if(t!=null)
+        {
+            if(t.getId()==null)
+            {
+                t.setId(getMaxId());
+            }
+            map.put(t.getId(), t);
+        }else{
+            throw new RuntimeException("Object cannot be null");
+        }
+
 
         return t;
     }
@@ -35,6 +44,17 @@ public abstract class AbstractMapServices<T, ID> {
         map.entrySet().removeIf(entry->entry.getValue().equals(t));
     }
 
+    private Integer getMaxId()
+    {
+        Integer nextId=null;
+        try {
+            nextId=Collections.max(map.keySet())+1;
+        }catch (NoSuchElementException e)
+        {
+            nextId=1;
+        }
 
+        return nextId;
+    }
 
 }
