@@ -21,11 +21,10 @@ public class DataLoader implements CommandLineRunner {
     private final PetServices ps;
     private final VetServices vs;
 
-    public DataLoader()
-    {
-        os=new OwnerServiceMap();
-        ps=new PetServiceMap();
-        vs=new VetServiceMap();
+    public DataLoader(OwnerServices os, PetServices ps, VetServices vs) {
+        this.os = os;
+        this.ps = ps;
+        this.vs = vs;
     }
 
 
@@ -33,6 +32,8 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
+        System.out.println("Loaded Owner ...........");
+        System.out.println("Loaded Pet............");
         Owner o1 = new Owner();
         o1.setId(1);
         o1.setFirstName("Maroti");

@@ -3,9 +3,11 @@ package com.maroti.services.map;
 import com.maroti.model.Vet;
 
 import com.maroti.services.VetServices;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
+@Service
 public class VetServiceMap extends AbstractMapServices<Vet, Integer> implements VetServices {
     @Override
     public Vet findById(Integer id) {

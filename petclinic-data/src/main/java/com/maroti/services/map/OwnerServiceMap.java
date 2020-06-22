@@ -2,10 +2,12 @@ package com.maroti.services.map;
 
 import com.maroti.model.Owner;
 import com.maroti.services.OwnerServices;
+import org.springframework.stereotype.Service;
 
 
 import java.util.Set;
 
+@Service
 public class OwnerServiceMap extends AbstractMapServices<Owner, Integer> implements OwnerServices {
 
     @Override
