@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www/thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>List of Owner</title>
@@ -7,5 +7,27 @@
 <body>
 <h1>List of Owners</h1>
 <hr>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Address</th>
+        <th>City</th>
+        <th>Telephone</th>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="owner : ${owner}">
+            <td th:text="${owner?.id}"></td>
+            <td th:text="${owner?.firstName}"></td>
+            <td th:text="${owner?.lastName}"></td>
+            <td th:text="${owner?.address}"></td>
+            <td th:text="${owner?.city}"></td>
+            <td th:text="${owner?.telephone}"></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>
