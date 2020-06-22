@@ -1,12 +1,12 @@
 package com.maroti.services.map;
 
 import com.maroti.model.Pet;
-import com.maroti.services.CrudService;
 
-import javax.print.attribute.IntegerSyntax;
+import com.maroti.services.PetServices;
+
 import java.util.Set;
 
-public class PetServiceMap extends AbstractMapServices<Pet, Integer> implements CrudService<Pet, Integer> {
+public class PetServiceMap extends AbstractMapServices<Pet, Integer> implements PetServices {
     @Override
     public Pet findById(Integer id) {
         return super.findById(id);

@@ -1,13 +1,12 @@
 package com.maroti.services.map;
 
 import com.maroti.model.Owner;
-import com.maroti.services.CrudService;
 import com.maroti.services.OwnerServices;
-import org.springframework.boot.web.reactive.filter.OrderedWebFilter;
+
 
 import java.util.Set;
 
-public class OwnerServiceMap extends AbstractMapServices<Owner, Integer> implements CrudService<Owner, Integer> {
+public class OwnerServiceMap extends AbstractMapServices<Owner, Integer> implements OwnerServices {
 
     @Override
     public Owner findById(Integer id) {
